@@ -2,12 +2,28 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Houston Weather</title>
+  <title>Weather</title>
+  <style>
+    body {
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
-<a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="Houston" data-label_2="WEATHER" data-icons="Climacons Animated" data-theme="pure" >Houston WEATHER</a>
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-</script>
+  <a class="weatherwidget-io" href="https://forecast7.com/en/29d76n95d37/houston/" 
+     data-label_1="Houston" data-label_2="WEATHER" 
+     data-icons="Climacons Animated" data-theme="pure">
+     Houston WEATHER
+  </a>
+  <script>
+  !function(d,s,id){
+    var js,fjs=d.getElementsByTagName(s)[0];
+    if(!d.getElementById(id)){
+      js=d.createElement(s);js.id=id;
+      js.src='https://weatherwidget.io/js/widget.min.js';
+      fjs.parentNode.insertBefore(js,fjs);
+    }
+  }(document,'script','weatherwidget-io-js');
+  </script>
 </body>
 </html>
