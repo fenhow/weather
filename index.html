@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <title>Weather</title>
   <style>
-    body {
-      pointer-events: none;
+    /* Optional: Prevent cursor from showing pointer */
+    a.weatherwidget-io {
+      pointer-events: auto;
+      cursor: default;
     }
   </style>
 </head>
@@ -15,15 +17,28 @@
      data-icons="Climacons Animated" data-theme="pure">
      Houston WEATHER
   </a>
+
   <script>
-  !function(d,s,id){
-    var js,fjs=d.getElementsByTagName(s)[0];
-    if(!d.getElementById(id)){
-      js=d.createElement(s);js.id=id;
-      js.src='https://weatherwidget.io/js/widget.min.js';
-      fjs.parentNode.insertBefore(js,fjs);
-    }
-  }(document,'script','weatherwidget-io-js');
+    !function(d,s,id){
+      var js,fjs=d.getElementsByTagName(s)[0];
+      if(!d.getElementById(id)){
+        js=d.createElement(s);js.id=id;
+        js.src='https://weatherwidget.io/js/widget.min.js';
+        fjs.parentNode.insertBefore(js,fjs);
+      }
+    }(document,'script','weatherwidget-io-js');
+
+    // Disable link after widget loads
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        const widget = document.querySelector('.weatherwidget-io');
+        if (widget) {
+          widget.addEventListener('click', function(e) {
+            e.preventDefault();  // Block click from opening new tab
+          });
+        }
+      }, 2000); // Delay ensures widget has loaded
+    });
   </script>
 </body>
 </html>
